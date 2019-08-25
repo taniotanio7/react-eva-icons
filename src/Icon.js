@@ -50,7 +50,7 @@ class Icon extends Component {
   }
 
   render() {
-    const { name, fill, size, animation } = this.props;
+    const { name, fill, size, animation, cursor } = this.props;
 
     const dims = this.updateDims(size);
 
@@ -60,6 +60,7 @@ class Icon extends Component {
         data-eva-fill={fill}
         data-eva-height={dims}
         data-eva-width={dims}
+        css={{cursor}}
       />
     );
 
@@ -72,6 +73,7 @@ Icon.propTypes = {
   fill: PropTypes.string,
   name: PropTypes.string,
   size: PropTypes.string,
+  cursor: PropTypes.string,
 };
 
 Icon.defaultProps = {
@@ -79,6 +81,7 @@ Icon.defaultProps = {
   fill: "#fff",
   name: "",
   size: "medium",
+  cursor: "default",
 };
 
 export default Icon;
